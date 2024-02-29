@@ -1,0 +1,27 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  test_setup_inspector_sbomgen:
+    runs-on: ubuntu-latest
+    name: Test Setup of Amazon Inspector SBOM Generator
+    steps:
+      - uses: actions/checkout@v4
+      - id: setup_sbomgen
+        name: Install
+        uses: ./
+        with:
+          version: latest
+          platform: amd64
+      - name: Verify
+        run: $inspector_sbomgen --version

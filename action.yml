@@ -1,0 +1,31 @@
+name: 'Setup Amazon Inspector SBOM Generator'
+description: 'Installs and configures Amazon Inspector SBOM Generator.'
+inputs:
+  version:
+    description: Amazon Inspector SBOM Generator version.
+    required: false
+    default: latest
+  platform:
+    description: Target platform to execute Amazon Inspector SBOM Generator.
+    required: false
+    default: amd64
+outputs:
+  inspector_sbomgen:
+    description: Path to Amazon Inspector SBOM Generator binary.
+    value: ${{ steps.setup_sbomgen.outputs.inspector_sbomgen }}
+runs:
+  using: composite
+  steps:
+    - name: Set GitHub Path
+      run: echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+      shell: bash
+      env:
+        GITHUB_ACTION_PATH: ${{ github.action_path }}
+    - id: setup_sbomgen
+      name: Setup Amazon Inspector SBOM Generator
+      run: setup_sbomgen.sh $INSPECTOR_SBOM_DIR $VERSION $PLATFORM
+      shell: bash
+      env:
+        VERSION: ${{ inputs.version }}
+        PLATFORM: ${{ inputs.platform }}
+        INSPECTOR_SBOM_DIR: ${{ github.workspace }}/inspector-sbomgen
