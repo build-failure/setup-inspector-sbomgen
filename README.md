@@ -1,4 +1,4 @@
-# Setup Amazon Inspector SBOM Generator GitHub Action
+# Setup Amazon Inspector SBOM Generator Action
 
 [![Lint Codebase](https://github.com/build-failure/setup-inspector-sbomgen/actions/workflows/linter.yml/badge.svg)](https://github.com/build-failure/setup-inspector-sbomgen/actions/workflows/linter.yml)
 [![Continuous Integration](https://github.com/build-failure/setup-inspector-sbomgen/actions/workflows/ci.yml/badge.svg)](https://github.com/build-failure/setup-inspector-sbomgen/actions/workflows/ci.yml)
