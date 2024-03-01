@@ -19,8 +19,7 @@ Target platform to execute Amazon Inspector SBOM Generator. Default `"amd64"`.
 
 ```yaml
 - name: Setup Amazon Inspector SBOM Generator
-  id: setup-sbomgen
   uses: build-failure/setup-inspector-sbomgen@v1
-- name: Run
+- name: Run Amazon Inspector SBOM Generator
   run: $inspector_sbomgen --version
 ```
