@@ -3,7 +3,8 @@
 [![Lint Codebase](https://github.com/build-failure/setup-inspector-sbomgen/actions/workflows/linter.yml/badge.svg)](https://github.com/build-failure/setup-inspector-sbomgen/actions/workflows/linter.yml)
 [![Continuous Integration](https://github.com/build-failure/setup-inspector-sbomgen/actions/workflows/ci.yml/badge.svg)](https://github.com/build-failure/setup-inspector-sbomgen/actions/workflows/ci.yml)
 
-Fails if report findings exceed threshold.
+Contains a GitHub action to set up [Amazon Inspector SBOM Generator](https://docs.aws.amazon.com/inspector/latest/user/sbom-generator.html)
+for generation of software bill of materials (SBOM).
 
 ## Inputs
 
